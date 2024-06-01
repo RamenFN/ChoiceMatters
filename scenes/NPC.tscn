@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jpbvut8eralo" path="res://assets/Female.png" id="1_iu8dn"]
 [ext_resource type="Script" path="res://scripts/NPC.gd" id="1_whc4b"]
-[ext_resource type="Texture2D" uid="uid://cu6nu3vi4ah25" path="res://assets/text bubble.png" id="3_j2b3v"]
+[ext_resource type="PackedScene" uid="uid://bjr5xo4swytqu" path="res://scenes/dialogue.tscn" id="3_cqv6r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gxk4"]
 atlas = ExtResource("1_iu8dn")
@@ -89,7 +89,7 @@ animations = [{
 size = Vector2(10, 5)
 
 [node name="NPC" type="CharacterBody2D"]
-position = Vector2(143, 38)
+position = Vector2(122, 99)
 script = ExtResource("1_whc4b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -105,9 +105,6 @@ shape = SubResource("RectangleShape2D_682g2")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="TextBubble" type="Sprite2D" parent="."]
-position = Vector2(-30, -11)
-scale = Vector2(0.796875, 0.796875)
-texture = ExtResource("3_j2b3v")
+[node name="Dialogue" parent="." instance=ExtResource("3_cqv6r")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
