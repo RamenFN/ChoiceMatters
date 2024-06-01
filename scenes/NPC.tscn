@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://shcl7h4kaxu4"]
+[gd_scene load_steps=15 format=3 uid="uid://shcl7h4kaxu4"]
 
 [ext_resource type="Texture2D" uid="uid://jpbvut8eralo" path="res://assets/Female.png" id="1_iu8dn"]
 [ext_resource type="Script" path="res://scripts/NPC.gd" id="1_whc4b"]
+[ext_resource type="Texture2D" uid="uid://cu6nu3vi4ah25" path="res://assets/text bubble.png" id="3_j2b3v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gxk4"]
 atlas = ExtResource("1_iu8dn")
@@ -103,5 +104,10 @@ shape = SubResource("RectangleShape2D_682g2")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="TextBubble" type="Sprite2D" parent="."]
+position = Vector2(-30, -11)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("3_j2b3v")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
